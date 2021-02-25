@@ -48,6 +48,9 @@ public class BookRepository {
 
    public Book findBook(String name) {
        Assert.notNull(name, "The Book's name must not be null");
+       if(books.get(name)==null) {
+    	   return new Book();
+       }
        return books.get(name);
    }
 }
